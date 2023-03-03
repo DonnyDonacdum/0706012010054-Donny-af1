@@ -7,5 +7,17 @@
 
 import Foundation
 
-print("Hello, World!")
+var userInput: String
+
+
+print("Welcome to the world of magic 🫡\n")
+print("You have been choosen to embark on an epic journey as a young wizard on the path to becoming a master of the ")
+print("arcane arts. Your Adventures will take you through GENSHIN IMPACT FOREST\n")
+print("Press [return] to continue:")
+let en = readLine()
+print("Tell us your name")
+let nam = readLine()
+print("Your name is \(nam!)")
+
+
 
