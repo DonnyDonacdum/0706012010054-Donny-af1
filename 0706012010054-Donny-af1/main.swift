@@ -69,11 +69,18 @@ while (!entry){
             print("Your HP is \(Health)HP")
             print("You have \(Poition)x Potions\n")
             print("would you like to heal? It cost 1 Potions [Y/N]")
-            let String decide = readLine()??<#default value#>
-            if (decide.uppercased()) {
-                let heel = false
-            }else if (decide.uppercased() ||decide.lowercased()){
-                
+            let decide = readLine();<#default value#>
+            switch (decide){
+            case "y":
+                Health += 20
+                Poition -= 1
+                break;
+            case "n":
+                heel = true
+            case .none:
+                <#code#>
+            case .some(_):
+                <#code#>
             }
         }
     default:
