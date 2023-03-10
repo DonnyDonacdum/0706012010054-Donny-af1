@@ -9,7 +9,21 @@ import Foundation
 
 var userInput: String
 var choose = ""
-var enemies = Set<String>()
+var monsters: Set<String> = []
+func Monsters() -> monsters {
+    let random = Int.random(in: 0..<3)
+    var enemy: monsters
+    switch random {
+    case 1:
+    enemy = Lawachurl
+    case 2:
+    enemy = Hilichurl
+    default:
+        enemy = Miltachurl
+    }
+    return enemy
+}
+
 var Health = 0
 var Magic = 0
 var Poition = 0
@@ -64,7 +78,6 @@ while (!entry){
         break;
     case "h" :
         var heel = false
-        var decide = ""
         while (heel){
             print("Your HP is \(Health)HP")
             print("You have \(Poition)x Potions\n")
@@ -72,16 +85,33 @@ while (!entry){
             let decide = readLine();<#default value#>
             switch (decide){
             case "y":
-                Health += 20
-                Poition -= 1
+                if (Poition != 0) {
+                    Health += 20
+                    Poition -= 1
+                    print("You gained 20 Health")
+                }else {
+                    print("You run out of Potions")
+                }
                 break;
             case "n":
                 heel = true
-            case .none:
-                <#code#>
-            case .some(_):
-                <#code#>
+            default:
+                print("Wrong input")
             }
+        }
+    case "m" :
+        print("Welcome to Mondstrat")
+        print("What would you like to do traveler?")
+        print("[1]Walk")
+        print("[2]Enemy List")
+        print("[3]Exit")
+        let chosen = readLine();
+        switch (chosen) {
+        case "1":
+            
+        default:
+            print("Wrong input")
+            
         }
     default:
         print("Wrong input")
