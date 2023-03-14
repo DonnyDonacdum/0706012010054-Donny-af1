@@ -9,21 +9,18 @@ import Foundation
 
 var userInput: String
 var choose = ""
-var monsters: Set<String> = []
-func Monsters() -> monsters {
-    let random = Int.random(in: 0..<3)
-    var enemy: monsters
-    switch random {
-    case 1:
-    enemy = Lawachurl
-    case 2:
-    enemy = Hilichurl
-    default:
-        enemy = Miltachurl
-    }
-    return enemy
-}
-
+var scorelist:[String] = []
+scorelist.append("Slimes")
+scorelist.append("Hilichurl")
+scorelist.append("Miltachurl")
+scorelist.append("Lawachurl")
+scorelist.append("Samachurl")
+scorelist.append("Fatui Skrirmisher Legionaire")
+scorelist.append("")
+scorelist.append("Unusual Hilichurl")
+scorelist.append("Eye of Storm")
+var liop:[String] = []
+liop.append("")
 var Health = 0
 var Magic = 0
 var Poition = 0
@@ -31,7 +28,7 @@ var Elixir = 0
 //var int Magic = 0
 let entry = true
 while (!entry){
-    print("Welcome to the world of magic 🫡 Version 1\n")
+    print("Welcome to the world of magic 🫡 Version 1.1.0\n")
     print("You have been choosen to embark on an epic journey as a young Traveler on the path to becoming a master of the ")
     print("all elements. Your Adventures will take you through GENSHIN IMPACT\n")
     print("Press [return] to continue:")
@@ -100,18 +97,28 @@ while (!entry){
             }
         }
     case "m" :
-        print("Welcome to Mondstrat")
-        print("What would you like to do traveler?")
-        print("[1]Walk")
-        print("[2]Enemy List")
-        print("[3]Exit")
-        let chosen = readLine();
-        switch (chosen) {
-        case "1":
-            
-        default:
-            print("Wrong input")
-            
+        var pio = true;
+        while(!pio){
+            print("Welcome to Mondstrat")
+            print("What would you like to do traveler?")
+            print("[1]Walk")
+            print("[2]Enemy List")
+            print("[3]Exit")
+            let chosen = readLine();
+            switch (chosen) {
+            case "2":
+                print("Here's the List of the enemy on Mondstadt")
+                print(scorelist)
+                print("There's currently \(scorelist.count) enemies")
+                print("What would you like to do?")
+                let un = readLine()
+            case "3":
+                pio = true;
+                break;
+            default:
+                print("Wrong input")
+                
+            }
         }
     default:
         print("Wrong input")
